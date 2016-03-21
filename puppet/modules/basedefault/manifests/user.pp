@@ -3,14 +3,35 @@
 class basedefault::user {
   include sshkeys
 
-  user { 'deploy':
+  file { '/home/deploy':
+    ensure => directory,
+    owner => 'deploy',
+    group => 'deploy'
+  }
+
+  user { 'deploy' :
       ensure           => 'present',
       home             => '/home/deploy',
-      purge_ssh_keys   => true,
       comment          => 'Deployment user',
       password         => '!!',
       shell            => '/bin/bash',
-      keys             => ('alice','bob','charlie'),
+      purge_ssh_keys   => true,
+      # keys             => ( 'alice', 'bob', 'charlie' ),
+  }
+
+  sshkeys::key { 'alice-key':
+    key_name => 'alice',
+    user     => 'deploy',
+  }
+
+  sshkeys::key { 'bob-key':
+    key_name => 'bob',
+    user     => 'deploy',
+  }
+
+  sshkeys::key { 'charlie-key':
+    key_name => 'charlie',
+    user     => 'deploy',
   }
 
   # $myusers = hiera('sshkeys::users')

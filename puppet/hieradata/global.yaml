@@ -10,11 +10,11 @@ sshkeys::keys:
     type: 'ssh-rsa'
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC9EC7xtYYZZblNgQP/SQ/7NR0fUW+mSMNv6gjDqfhPJ8K4mgqAN4ozvxnHl5k7dfzV4OhB/lIrnjfBg7BIfJjtxcoMNJDSDSmYixX7MzS/Ec35k/ovlxkK5tRKdhZHKYigLSUS2gE30l0804FeCj36O19UBeArrSXghsaKELFuE2EqUGz9kZ9WZW9SVDdJKuTSuij9GspIRCdhMX/s6GQOiycremqtnHf1xuZ22bSkbuAAYvPxQTvsxCMtykE4iqdJ8xhWeO+CZZMWn11AEv1FscwbirbjkjXz02D57BaeOwlU13oZIfA6Ko4SkMa9FuhNrtn4ctWb5jBep9xzyZUR'
 
-sshkeys::users:
-  deploy:
-    home: '/home/deploy'
-    shell: '/bin/bash'
-    keys:
-      - alice
-      - bob
-      - charlie
+# sshkeys::users:
+#   deploy:
+#     home: '/home/deploy'
+#     shell: '/bin/bash'
+#     keys:
+#       - alice
+#       - bob
+#       - charlie
